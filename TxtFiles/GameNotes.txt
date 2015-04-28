@@ -1,0 +1,391 @@
+Game Notes
+
+Axis Input
+	Horizontal = SideToSide
+		Negative Button - left
+		Positive Button = right
+		Alt Neg = a
+		Alt Pos = d
+		gravity 3
+		dead .001
+		Sensitivity 3
+		snap true
+		invert false
+		type Key or mouse
+		Axis Y
+		
+	Vertical = Forward
+		Negative Button = down
+		Positive Button = up
+		Alt Neg = s
+		Alt Pos = w
+		gravity 3
+		dead .001
+		Sensitivity 3
+		snap true
+		invert false
+		type Key or mouse
+		Axis Y
+	Fire = Fire
+		Negative Button = null
+		Positive Button = space
+		Alt Neg = null
+		Alt Pos = 0
+		gravity 3
+		dead .001
+		Sensitivity 3
+		snap = false
+		invert false
+		type Key or mouse
+		Axis Y
+	Pause
+		button P
+	
+Audio File needed
+	Background music
+	
+UIs
+Win Scene
+	Win Text
+	Display
+		Enemies Killed
+		Score Achieved
+	Restart button
+	Quit Button
+	
+Lose Scene
+	Loss Text / done
+	Display
+		Enemies Killed
+		Score Achieved
+	Restart Button
+	Quit Button
+	
+Credits
+
+Game UI
+	Life counter / done
+	Enemy counter / done
+	Score display / done
+	Power ups Display / done
+	Health Indicator / done
+	Shield Indicator - add as an overlay on health until it is depleted then return the health indicator back to health	
+
+Statistics Screen(both as numerical and percentage)
+	Power ups used
+	Overall score achieved 
+	Best Score
+	average score
+
+Waves
+	keep count of ships to be destroyed by player
+	end level only when all ships have been destroyed by player
+	
+Boss Wave 
+	when to call boss wave
+	have boss spawn secondary ships to keep difficulty up
+	end level after boss ship is destroyed
+	all extra ships are destroyed by boss ship explosion
+	
+States
+	Start state, start screen
+	Play state, game screen
+	Options State, options screen
+	Death state, death screen
+	Win state, Win screen
+	
+Game Controller
+
+Abstract Ship
+
+Base Stats
+	HP 5
+	Shield 10
+	Damage 1
+
+PlayerShip(ship)
+	Persistent Data
+		HP
+		Shields(amount)
+		All Upgrades
+	
+	Data to set on load
+		HP
+		Shields
+		Upgrades
+		
+
+EnemyShip(ship)
+	Enemy Data
+	Type1()
+		Tier 1(0)
+			HP = (Base)
+			Shield = Null
+			Engines = (Base)
+			Damage = (Base)
+			Drops = Shield Boost
+					MultiShot
+					Health					
+		Tier 2(1)
+			HP = (Base) + level 1 upgrade
+			Shield = Null
+			Engines = (Base) + level 1 upgrade
+			Damage = (Base) + level 1 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health				
+					
+		Tier 3(2)
+			HP = (Base) + level 2 upgrade
+			Shield = True Level 1
+			Engines = (Base) + level 2 upgrade
+			Damage = (Base) + level 2 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health
+					+ 1
+		
+		Tier 4(3)
+			HP = (Base) + level 3 upgrade
+			Shield = Level 2
+			Engines = (Base) + level 3 upgrade
+			Damage = (Base) + level 3 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health					
+					+ 1
+		Tier 5(4)
+			HP = (Base) + level 4 upgrade
+			Shield = Level 3
+			Engines = (Base) + level 4 upgrade
+			Damage = (Base) + level 4 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health					
+					+ 2
+	Type2
+		Tier 1(0)
+			HP = (Base)
+			Shield = Null
+			Engines = (Base)
+			Damage = (Base)
+			Drops = Shield Boost
+					MultiShot
+					Health					
+		Tier 2(1)
+			HP = (Base) + level 1 upgrade
+			Shield = Null
+			Engines = (Base) + level 1 upgrade
+			Damage = (Base) + level 1 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health				
+					
+		Tier 3(2)
+			HP = (Base) + level 2 upgrade
+			Shield = True Level 1
+			Engines = (Base) + level 2 upgrade
+			Damage = (Base) + level 2 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health
+					+ 1
+		
+		Tier 4(3)
+			HP = (Base) + level 3 upgrade
+			Shield = Level 2
+			Engines = (Base) + level 3 upgrade
+			Damage = (Base) + level 3 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health					
+					+ 1
+		Tier 5(4)
+			HP = (Base) + level 4 upgrade
+			Shield = Level 3
+			Engines = (Base) + level 4 upgrade
+			Damage = (Base) + level 4 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health					
+					+ 2
+	Type3
+		Tier 1(0)
+			HP = (Base)
+			Shield = Null
+			Engines = (Base)
+			Damage = (Base)
+			Drops = Shield Boost
+					MultiShot
+					Health					
+		Tier 2(1)
+			HP = (Base) + level 1 upgrade
+			Shield = Level 1
+			Engines = (Base) + level 1 upgrade
+			Damage = (Base) + level 1 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health				
+					
+		Tier 3(2)
+			HP = (Base) + level 2 upgrade
+			Shield = Level 2
+			Engines = 2(Base) + level 2 upgrade
+			Damage = (Base) + level 2 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health
+					+ 1
+		
+		Tier 4(3)
+			HP = (Base) + level 3 upgrade
+			Shield = Level 3
+			Engines = (Base) + level 3 upgrade
+			Damage = (Base) + level 3 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health					
+					+ 1
+		Tier 5(4)
+			HP = (Base) + level 4 upgrade
+			Shield = Level 4
+			Engines = (Base) + level 4 upgrade
+			Damage = (Base) + level 4 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health					
+					+ 2
+
+MiniBoss(Enemy)
+Tier 1(0)
+			HP = (Base * 3) * 2
+			Shield = Level 1
+			Engines = (Base)
+			Damage = (Base * 2)
+			Drops = Shield Boost
+					MultiShot
+					Health					
+		Tier 2
+			HP = (Base) + level 1 upgrade
+			Shield = Level 2
+			Engines = (Base) + level 1 upgrade
+			Damage = (Base * 2) + level 1 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health				
+					
+		Tier 3
+			HP = (Base) + level 2 upgrade
+			Shield = Level 3
+			Engines = (Base) + level 2 upgrade
+			Damage = (Base * 2) + level 2 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health
+					+ 1
+		
+		Tier 4
+			HP = (Base) + level 3 upgrade
+			Shield = Level 4
+			Engines = (Base) + level 3 upgrade
+			Damage = (Base * 2) + level 3 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health					
+					+ 1
+		Tier 5
+			HP = (Base) + level 4 upgrade
+			Shield = Level 5
+			Engines = (Base) + level 4 upgrade
+			Damage = (Base * 2) + level 4 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health					
+					+ 2
+					
+Boss(enemy)
+Tier 1(0)
+			HP = (Base * 3)
+			Shield = Level 1
+			Engines = (Base)
+			Damage = (Base * 2)
+			Drops = Shield Boost
+					MultiShot
+					Health	
+					+ 1 guaranteed drop
+		Tier 2
+			HP = (Base) + level 1 upgrade
+			Shield = Level 2
+			Engines = (Base) + level 1 upgrade
+			Damage = (Base * 2) + level 1 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health				
+					+ 1 guaranteed drop
+
+		Tier 3
+			HP = (Base) + level 2 upgrade
+			Shield = Level 3
+			Engines = (Base) + level 2 upgrade
+			Damage = (Base * 2) + level 2 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health
+					+ 1
+					+ 1 guaranteed drop
+		Tier 4
+			HP = (Base) + level 3 upgrade
+			Shield = Level 4
+			Engines = (Base) + level 3 upgrade
+			Damage = (Base * 2) + level 3 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health					
+					+ 1
+					+ 1 guaranteed drop
+		Tier 5
+			HP = (Base) + level 4 upgrade
+			Shield = Level 5
+			Engines = (Base) + level 4 upgrade
+			Damage = (Base * 2) + level 4 upgrade
+			Drops = Shield Boost
+					MultiShot
+					Health					
+					+ 2
+					+ 1 guaranteed drop
+UI 
+Game
+	Health
+		Player
+		Bosses
+	
+	Wave
+	Score
+	Power-Ups
+	Enemy Count/Left to Kill
+
+Upgrade Shop
+
+Credits
+
+Power ups
+	Triggered on Pick-up
+	/	Health(heals player to full health)
+	/	Shield(if !HasShield give temp shield, else give full shield)
+	/	Double Max Health(heals player to full health, gives double the max until the extra is gone)
+	/	Double Max Shield(if !hasShield give temp shield at double base value, else heals the player shield to full, gives double the max value until extra is gone)
+	/	Treasure Chest(random amount of salvage, min 1000, max 50000)
+		
+	Set to Storage(triggered with button press)
+		Bombs
+	/		explosive(medium blast radius, proximity detection, medium damage)
+	/		EMP(disables shields or temporarily disables weapons(5 second))
+	/		Multi-Bomb(3 or 4 bombs that drift doing low to mid damage)
+	/	Multi-shot(fires 3 bolts, forward, left 45 degrees, right 45 degrees)
+	/	Missiles(replaces bolts with a rocket the does double damage, 50 missiles)
+	/	Missile battery(fire 10 missiles that track nearby enemies)
+		Laser(beam that last for 10 seconds doing 3 times normal damage)
+	/	Nuke(extremely rare drop, kills everything on the screen except player)
+		
+	Boss specific(guaranteed)
+		random upgrade token(weapon, shield, engine, health)

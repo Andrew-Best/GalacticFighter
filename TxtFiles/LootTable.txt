@@ -1,0 +1,28 @@
+Drop chance list
+
+Health				25%		[0]
+
+Shield				25&		[1]
+
+Double Health		15%		[2]
+
+Double Shield		15%		[3]
+
+Treasure Chest		5%		[4]
+
+Bomb
+	Explosive		10%		[5]
+	
+	EMP				10%		[6]
+	
+	Mines			10%		[7]
+	
+	Nuke			1%		[8]
+	
+MultiShot			15%		[9]
+
+Missile				20%		[10]
+
+MissileBattery		5%		[11]
+
+Laser				15%		[12]

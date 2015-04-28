@@ -1,0 +1,31 @@
+Ship names 
+enemies
+	fast attack types(low shield and health)
+		speedship.png
+		alien4.png
+		alien2.png
+		blueship4.png
+		F5S1.png
+	Medium types
+		alien1.png
+		alien3.png
+		F5S2.png
+		medfighter.ong
+		blueship3.png
+	Heavy types
+		orangeship.png
+		blueship1.png
+		blueship2.png
+		F5S3.png
+	Mini Boss types
+		att2.png
+		F5S4.png
+		RD4.png
+		spShipSprite.png
+		aliensprite.png
+	Boss types
+		RD1.png
+		RD2.png
+		RD3.png
+		alienspaceship.png
+		

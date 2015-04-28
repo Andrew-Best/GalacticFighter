@@ -1,0 +1,4 @@
+SpaceShooter Credits
+
+licensing for Ship and planet images() 
+<div xmlns:cc="http://creativecommons.org/ns#" about="http://millionthvector.blogspot.ca/p/free-sprites.html"><a rel="cc:attributionURL" property="cc:attributionName" href="http://millionthvector.blogspot.com/p/free-sprites.html">MillionthVector</a> / <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div>

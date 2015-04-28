@@ -1,0 +1,6 @@
+Space Shooter Bug List
+
+GameOver function not activating, gameover not being set to true/ fixed
+Bosses not taking damage/fixed
+Some player ships are not responding to controls
+UI not fully functioning in build
