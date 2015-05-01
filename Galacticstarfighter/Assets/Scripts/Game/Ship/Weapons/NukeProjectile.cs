@@ -46,6 +46,9 @@ public class NukeProjectile : Projectile
 
     public void Detonate()
     {
+        //Inatansiate explosion, with a collider that expands with it
+        //check for contact with anything that isn't the player and apply 1000 damage
+
         for(int i = 0; i < activeEnemies_.Count; ++i)
         {
             activeEnemies_[i].GetComponent<ShipController>().ApplyDamage(activeEnemies_[i], m_Damage);
