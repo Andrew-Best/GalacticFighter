@@ -17,7 +17,7 @@ public class LootTable : MonoBehaviour
         if(randNum_> 0)
         {
             //test code
-            Instantiate(m_ItemList.m_PowerUps[11], spawnPosition, spawnRotation);
+            Instantiate(m_ItemList.m_PowerUps[8], spawnPosition, spawnRotation);
         }
 
         else if(randNum_ <= 1)

@@ -52,9 +52,6 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -112,6 +109,7 @@
     <Compile Include="Assets\Scripts\Game\Ship\ShipController.cs" />
     <Compile Include="Assets\Scripts\Game\Ship\ShipData.cs" />
     <Compile Include="Assets\Scripts\Game\Ship\Weapons\MissileProjectile.cs" />
+    <Compile Include="Assets\Scripts\Game\Ship\Weapons\NukeProjectile.cs" />
     <Compile Include="Assets\Scripts\Game\Ship\Weapons\Projectile.cs" />
     <Compile Include="Assets\Scripts\Game\Ship\Weapons\Weapon.cs" />
     <Compile Include="Assets\Scripts\Game\States\Gamestates\Default.cs" />
