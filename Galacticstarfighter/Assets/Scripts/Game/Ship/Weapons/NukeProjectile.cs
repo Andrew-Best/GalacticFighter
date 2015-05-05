@@ -9,6 +9,8 @@ public class NukeProjectile : Projectile
 
         public GameObject m_Explosion;
 
+        public Shockwave m_Shockwave;
+
         #endregion
 
         #region private
@@ -19,7 +21,6 @@ public class NukeProjectile : Projectile
         #endregion
     #endregion
 
-    //detect all enemies on screen(going to have to use not player for the tag)
     //set target to middle of the screen
     //travel to target and detonate
     //applydamage to all enemies of 1000
@@ -38,7 +39,6 @@ public class NukeProjectile : Projectile
 
         if(this.transform.position.y > 3.0f)
         {
-            Instantiate(m_Explosion, this.transform.position, this.transform.rotation);
             Detonate();
             Destroy(gameObject);
         }
@@ -49,10 +49,14 @@ public class NukeProjectile : Projectile
         //Inatansiate explosion, with a collider that expands with it
         //check for contact with anything that isn't the player and apply 1000 damage
 
-        for(int i = 0; i < activeEnemies_.Count; ++i)
-        {
-            activeEnemies_[i].GetComponent<ShipController>().ApplyDamage(activeEnemies_[i], m_Damage);
-        }
+        //for(int i = 0; i < activeEnemies_.Count; ++i)
+        //{
+            //activeEnemies_[i].GetComponent<ShipController>().ApplyDamage(activeEnemies_[i], m_Damage);
+        //}
+        Instantiate(m_Explosion, this.transform.position, this.transform.rotation);
+        m_Shockwave.StartShockwave();
+        //Instantiate(m_Shockwave, this.transform.position, this.transform.rotation);
+
     }
 
     private void AddPotentialTargets()

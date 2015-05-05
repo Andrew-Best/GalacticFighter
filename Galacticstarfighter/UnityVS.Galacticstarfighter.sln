@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.Galacticstarfighter.CSharp", "UnityVS.Galacticstarfighter.CSharp.csproj", "{FB05E2D0-5744-FA6E-34D4-ABDC698633BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.Galacticstarfighter.CSharp.Editor", "UnityVS.Galacticstarfighter.CSharp.Editor.csproj", "{C07C9A8D-78B3-C8F1-0EA5-573D05E88A7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.Galacticstarfighter.CSharp.Plugins", "UnityVS.Galacticstarfighter.CSharp.Plugins.csproj", "{A3DA9BDE-C10A-3FC1-8489-CFE396E58267}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{FB05E2D0-5744-FA6E-34D4-ABDC698633BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB05E2D0-5744-FA6E-34D4-ABDC698633BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB05E2D0-5744-FA6E-34D4-ABDC698633BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C07C9A8D-78B3-C8F1-0EA5-573D05E88A7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C07C9A8D-78B3-C8F1-0EA5-573D05E88A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C07C9A8D-78B3-C8F1-0EA5-573D05E88A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C07C9A8D-78B3-C8F1-0EA5-573D05E88A7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3DA9BDE-C10A-3FC1-8489-CFE396E58267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3DA9BDE-C10A-3FC1-8489-CFE396E58267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3DA9BDE-C10A-3FC1-8489-CFE396E58267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3DA9BDE-C10A-3FC1-8489-CFE396E58267}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
