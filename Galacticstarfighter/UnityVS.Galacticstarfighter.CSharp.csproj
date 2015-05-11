@@ -112,6 +112,7 @@
     <Compile Include="Assets\Scripts\Game\Ship\Ship.cs" />
     <Compile Include="Assets\Scripts\Game\Ship\ShipController.cs" />
     <Compile Include="Assets\Scripts\Game\Ship\ShipData.cs" />
+    <Compile Include="Assets\Scripts\Game\Ship\Weapons\Blast.cs" />
     <Compile Include="Assets\Scripts\Game\Ship\Weapons\MissileProjectile.cs" />
     <Compile Include="Assets\Scripts\Game\Ship\Weapons\NukeProjectile.cs" />
     <Compile Include="Assets\Scripts\Game\Ship\Weapons\Projectile.cs" />

@@ -9,12 +9,11 @@ public class NukeProjectile : Projectile
 
         public GameObject m_Explosion;
 
-        public Shockwave m_Shockwave;
+        public GameObject m_Shockwave;
 
         #endregion
 
         #region private
-        private List<GameObject> activeEnemies_;
 
         private Vector3 target_;
         
@@ -24,16 +23,14 @@ public class NukeProjectile : Projectile
     //set target to middle of the screen
     //travel to target and detonate
     //applydamage to all enemies of 1000
-    //use particle system to create the explosion and shock wave
+
+    
     public void Start()
     {
-        m_Damage = 1000;
-        target_ = new Vector3(0.0f, 3.0f, 0.0f);
-        activeEnemies_ = new List<GameObject>();
-        AddPotentialTargets();
+        target_ = new Vector3(0.0f, 4.0f, 0.0f);
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         transform.position = Vector3.MoveTowards(transform.position, target_, this.m_ForwardAccel * Time.deltaTime);
 
@@ -46,32 +43,9 @@ public class NukeProjectile : Projectile
 
     public void Detonate()
     {
-        //Inatansiate explosion, with a collider that expands with it
-        //check for contact with anything that isn't the player and apply 1000 damage
-
-        //for(int i = 0; i < activeEnemies_.Count; ++i)
-        //{
-            //activeEnemies_[i].GetComponent<ShipController>().ApplyDamage(activeEnemies_[i], m_Damage);
-        //}
+        //Instansiate explosion, with a collider that expands with it
         Instantiate(m_Explosion, this.transform.position, this.transform.rotation);
-        m_Shockwave.StartShockwave();
-        //Instantiate(m_Shockwave, this.transform.position, this.transform.rotation);
+        m_Shockwave.GetComponent<Blast>().GenerateShockwave();
 
-    }
-
-    private void AddPotentialTargets()
-    {
-        GameObject[] enemiesInList_ = GameObject.FindGameObjectsWithTag("Enemy");
-        //if there is a boss or miniboss add them to list as well
-        
-        foreach (GameObject enemy_ in enemiesInList_)
-        {
-            AddEnemyToList(enemy_);
-        }
-    }
-
-    private void AddEnemyToList(GameObject enemy)
-    {
-        activeEnemies_.Add(enemy);
     }
 }
