@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LaserPU : PowerUps
+public class RapidFirePU : PowerUps
 {
     public override void Start()
     {
@@ -19,10 +19,8 @@ public class LaserPU : PowerUps
 
     public override void ItemAffect(GameObject player)
     {
-        //change bolt to laser for 30 seconds
-        //damage = 20 + 25% per player damage level
-        //return to bolt after timer expires
-        Debug.Log("Used a Laser");
+        //change fire rate unitl respawn
+        player.GetComponentInChildren<Weapon>().m_Cooldown *= 0.5f;
     }
     
     public override void UseItem(GameObject player)

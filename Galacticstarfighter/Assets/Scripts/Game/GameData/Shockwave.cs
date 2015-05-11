@@ -7,6 +7,8 @@ public class Shockwave : MonoBehaviour
 
     public int m_Damage;
 
+    public float m_BlastRadius;
+
     private float time_ = 0.25f;
 
     #endregion

@@ -83,6 +83,7 @@ public class SpawnPlayer : MonoBehaviour
             m_Player.transform.position = playerSpawn;
             m_Player.transform.rotation = spawnPlayerRotation;
             m_Player.GetComponentInChildren<Weapon>().SetProjectile(m_Player.GetComponentInChildren<Weapon>().m_ProjectilePrefabs[0]);
+            m_Player.GetComponentInChildren<Weapon>().m_Cooldown = 0.5f;
 
             SetProjectile();
         }
@@ -111,6 +112,7 @@ public class SpawnPlayer : MonoBehaviour
         m_Player.transform.position = playerSpawn;
         m_Player.transform.rotation = spawnPlayerRotation;
         m_Player.GetComponentInChildren<Weapon>().SetProjectile(m_Player.GetComponentInChildren<Weapon>().m_ProjectilePrefabs[0]);
+        m_Player.GetComponentInChildren<Weapon>().m_Cooldown = 0.5f;
 
         SetProjectile();
     }

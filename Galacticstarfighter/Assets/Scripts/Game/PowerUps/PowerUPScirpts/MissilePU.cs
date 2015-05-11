@@ -21,7 +21,6 @@ public class MissilePU : PowerUps
     {
         //change player shot to missile with 20 ammo.
         player.GetComponent<ShipData>().m_WeaponState[0].m_Ammo = 20;
-        player.GetComponent<PlayerController>().m_FireRate = 0.0f;
         player.GetComponentInChildren<Weapon>().SetProjectile(player.GetComponentInChildren<Weapon>().m_ProjectilePrefabs[3]);
     }
     

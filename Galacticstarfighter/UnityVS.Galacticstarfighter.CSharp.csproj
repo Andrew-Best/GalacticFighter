@@ -94,13 +94,13 @@
     <Compile Include="Assets\Scripts\Game\PowerUps\PowerUPScirpts\EMPPU.cs" />
     <Compile Include="Assets\Scripts\Game\PowerUps\PowerUPScirpts\ExplosivePu.cs" />
     <Compile Include="Assets\Scripts\Game\PowerUps\PowerUPScirpts\HealthPU.cs" />
-    <Compile Include="Assets\Scripts\Game\PowerUps\PowerUPScirpts\LaserPU.cs" />
     <Compile Include="Assets\Scripts\Game\PowerUps\PowerUPScirpts\MinesPU.cs" />
     <Compile Include="Assets\Scripts\Game\PowerUps\PowerUPScirpts\MissileBatteryPU.cs" />
     <Compile Include="Assets\Scripts\Game\PowerUps\PowerUPScirpts\MissilePU.cs" />
     <Compile Include="Assets\Scripts\Game\PowerUps\PowerUPScirpts\MultiShotPU.cs" />
     <Compile Include="Assets\Scripts\Game\PowerUps\PowerUPScirpts\NukePU.cs" />
     <Compile Include="Assets\Scripts\Game\PowerUps\PowerUPScirpts\PowerUps.cs" />
+    <Compile Include="Assets\Scripts\Game\PowerUps\PowerUPScirpts\RapidFirePU.cs" />
     <Compile Include="Assets\Scripts\Game\PowerUps\PowerUPScirpts\ShieldPU.cs" />
     <Compile Include="Assets\Scripts\Game\PowerUps\PowerUPScirpts\TreasureChestPU.cs" />
     <Compile Include="Assets\Scripts\Game\PowerUps\TokenScripts\EngineToken.cs" />

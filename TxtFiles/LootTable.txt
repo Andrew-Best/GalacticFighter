@@ -11,18 +11,33 @@ Double Shield		15%		[3]
 Treasure Chest		5%		[4]
 
 Bomb
-	Explosive		10%		[5]
+	Explosive		10%		[5](remove until later date)
 	
-	EMP				10%		[6]
+	EMP				10%		[6](remove until later date)
 	
-	Mines			10%		[7]
+	Mines			10%		[7](remove until later date)
 	
 	Nuke			1%		[8]
 	
-MultiShot			15%		[9]
+MultiShot			15%		[9](remove until later date)
 
 Missile				20%		[10]
 
 MissileBattery		5%		[11]
 
-Laser				15%		[12]
+RapidFire			15%		[12]
+
+
+Power up List
+
+[0] Health
+[1] Double Health 
+[2] Shield
+[3] Double Shield
+[4] Treasure Chest  
+[5] Free Life 
+[6] Rapid fire
+[7] Missile
+[8] Missile Battery 
+[9] Nuke	
+[10] NullItem
