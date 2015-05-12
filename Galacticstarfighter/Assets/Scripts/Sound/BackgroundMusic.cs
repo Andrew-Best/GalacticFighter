@@ -6,6 +6,10 @@ using System.Collections.Generic;
 
 public class BackgroundMusic : MonoBehaviour
 {
+    #region Variables
+    public GameData m_GData;
+    public SoundController m_Sound;
+
     public AudioClip m_BackgroundMusic1;
     public AudioClip m_BackgroundMusic2;
     public AudioClip m_BackgroundMusic3;
@@ -15,6 +19,7 @@ public class BackgroundMusic : MonoBehaviour
 
     private int randNum_ = 0;
     private int maxListSize = 4;
+    #endregion
 
 	// Use this for initialization
 	void Start () 
@@ -25,7 +30,9 @@ public class BackgroundMusic : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-	    if(!GetComponent<AudioSource>().isPlaying)
+        GetComponent<AudioSource>().volume = m_Sound.m_MusicVolume;
+        
+        if (!GetComponent<AudioSource>().isPlaying)
         {
             //if no audio or current track is done
             ChooseRandomMusicTrack();
@@ -119,7 +126,7 @@ public class BackgroundMusic : MonoBehaviour
 
     private void MakeSound(AudioClip originalClip)
     {
-        //audio clips fire and forget themselves, so in order to keep track on whether or not it is playing this function will assign the audio to the clip giving to it
+        //audio clips fire and forget themselves, so in order to keep track on whether or not it is playing this function will assign the audio to the clip given to it
         GetComponent<AudioSource>().clip = originalClip;
         GetComponent<AudioSource>().Play();
     }

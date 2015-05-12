@@ -7,7 +7,8 @@ public class Splash : MonoBehaviour
 
     public float mSplashTime;
     private float timer_;
-	// Use this for initialization
+
+    // Use this for initialization
 	void Start () 
     {
         timer_ = 0.0f;
@@ -19,7 +20,7 @@ public class Splash : MonoBehaviour
         timer_ += Time.deltaTime;
         if (timer_ > mSplashTime)
         {
-            Application.LoadLevel("MainMenu");
+            Application.LoadLevel("Start");
         }
 	}
 

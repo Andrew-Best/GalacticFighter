@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Projectile : MonoBehaviour 
+public class Projectile : MonoBehaviour
 {
+    #region Variables
     public float m_ForwardAccel;
     public int m_Damage = 1;
+    #endregion
 
     void FixedUpdate()
     {

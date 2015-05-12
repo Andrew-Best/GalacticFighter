@@ -7,8 +7,9 @@ public class Boundary
     public float xMin, xMax, yMin, yMax;
 }
 
-public class PlayerController : MonoBehaviour 
+public class PlayerController : MonoBehaviour
 {
+    #region Variables
     public PlayerData m_PData;
 
     public GameObject m_Enemy;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public int m_Salvage;
 
     private float nextShot_;
+    #endregion
 
     public void Start()
     {

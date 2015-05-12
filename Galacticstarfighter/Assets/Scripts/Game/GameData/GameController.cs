@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    #region Variables
+    #endregion
     public Text m_ControlText;
 
     public GameData m_GData;

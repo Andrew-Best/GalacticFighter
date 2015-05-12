@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyController : Enemy 
+public class EnemyController : Enemy
 {
+    #region Variables
     public float m_MaxVel;
     public Vector3 m_CurrVel;
+    #endregion
 
     public override void Awake()
     {

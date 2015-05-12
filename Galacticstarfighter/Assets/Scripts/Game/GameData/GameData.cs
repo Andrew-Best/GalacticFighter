@@ -7,14 +7,14 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class GameData : MonoBehaviour 
+public class GameData : MonoBehaviour
 {
+    #region Variables
     public static GameData m_GData;
 
     //Game Data
     public float m_MasterVol;
     public float m_MusicVol;
-    public float m_SFXVol;
 
     //Player Data
     public PlayerData m_PData;
@@ -27,8 +27,8 @@ public class GameData : MonoBehaviour
     public int m_EnemyDamageLevel;
     public int m_EnemyHealthLevel;
     public int m_EnemyShieldLevel;
-    
-	void Awake () 
+    #endregion
+    void Awake () 
     {
 	    if(m_GData == null)
         {
@@ -43,7 +43,6 @@ public class GameData : MonoBehaviour
         //Initalizing Default Game Values
         m_MasterVol = 100;
         m_MusicVol = 100;
-        m_SFXVol = 100;
 
         //Initalize Default Enemy Data
         m_EnemyTier = 1;

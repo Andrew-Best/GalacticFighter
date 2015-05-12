@@ -14,13 +14,13 @@ public class LootTable : MonoBehaviour
 
         Vector3 spawnPosition = new Vector3(parentShip.transform.position.x, parentShip.transform.position.y, 0);
         Quaternion spawnRotation = Quaternion.identity;
-        if(randNum_> 0)
+        /*if(randNum_> 0)
         {
             //test code
             Instantiate(m_ItemList.m_PowerUps[6], spawnPosition, spawnRotation);
         }
 
-        else if(randNum_ <= 1)
+        else*/ if(randNum_ <= 1)
         {
             //Bomb(Nuke)[9]
 

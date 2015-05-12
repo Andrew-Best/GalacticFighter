@@ -2,8 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class SpawnPlayer : MonoBehaviour 
+public class SpawnPlayer : MonoBehaviour
 {
+    #region Variables
     public GameData m_GData;
     public PlayerData m_PData;
     public GameController m_GController;
@@ -12,7 +13,9 @@ public class SpawnPlayer : MonoBehaviour
     private List<GameObject> playerPool_ = new List<GameObject>();
 
     public GameObject m_Player;
+ 
     private GameObject playerObj_;
+    #endregion
 
     public void SetStats(GameObject player)
     {

@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class MissileProjectile : Projectile 
+public class MissileProjectile : Projectile
 {
+    #region Variables
     private List<Transform> enemies_;
-    public  Transform m_CurrentTarget;
+    public Transform m_CurrentTarget;
 
     private float speed_ = 10.0f;
+    #endregion
 
     public void Start()
     {

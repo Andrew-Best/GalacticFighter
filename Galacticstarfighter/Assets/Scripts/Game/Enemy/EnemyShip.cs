@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class EnemyShip : Ship
 {
+    #region Variables
     public int m_Tier;
     public int m_SalvageVal;
     public int m_ScoreVal;
@@ -12,6 +13,7 @@ public class EnemyShip : Ship
     public LootTable m_ItemToDrop;
 
     private int randNum_;
+    #endregion
 
     public void Awake()
     {

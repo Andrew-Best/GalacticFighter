@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerShip : Ship 
+public class PlayerShip : Ship
 {
+    #region Variables
     public PlayerController m_PController;
     public PlayerData m_PData;
 
@@ -18,6 +19,8 @@ public class PlayerShip : Ship
     private int damageUpgradeCounter_ = 1; //Amount of upgrades in the damage by the player
     private int healthUpgradeCounter_ = 1; //Amount of upgrades in the health by the player
     private int levelUpgradeCounter_ = 1; //Level of PlayerShip
+    #endregion
+
 
     public int EngineLevel { get { return engineUpgradeCounter_; } set { engineUpgradeCounter_ = value; } }
     public int ShieldLevel { get { return shieldUpgradeCounter_; } set { shieldUpgradeCounter_ = value; } }

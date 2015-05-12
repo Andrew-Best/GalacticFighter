@@ -9,6 +9,8 @@ using UnityEngine.UI;
 [System.Serializable]
 public class PlayerData : MonoBehaviour
 {
+    #region Variables
+    #endregion
     public static PlayerData m_PData;
 
     public List<String> m_Items;

@@ -2,11 +2,12 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class MiniBossController : Enemy 
+public class MiniBossController : Enemy
 {
-
+    #region Variables
     public float m_MaxVel;
     public Vector3 m_CurrVel;
+    #endregion
 
     public override void Awake()
     {

@@ -4,9 +4,11 @@ using System.Collections.Generic;
 
 public class MiniBossShip : EnemyShip
 {
+    #region Variables
     public List<GameObject> m_BossDrops;
 
     private int randDrop_;
+    #endregion
 
     new public void Awake()
     {

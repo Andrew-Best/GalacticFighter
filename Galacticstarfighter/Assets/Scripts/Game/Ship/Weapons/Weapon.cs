@@ -25,13 +25,14 @@ public class Weapon : MonoBehaviour
             }
         }
     };
-
+    #region Variables
     public List<GameObject> m_ProjectilePrefabs;
 
     public Transform m_Blaster;
     public GameObject m_Shot;
     public float m_Cooldown;
     public int m_MaxAmmo;
+    #endregion
 
     public void SetProjectile(GameObject projectile)
     {

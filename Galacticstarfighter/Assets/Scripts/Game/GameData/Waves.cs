@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class Waves : MonoBehaviour 
+public class Waves : MonoBehaviour
 {
+    #region Variables
     public EnemySpawn m_ESpawn;
     public SpawnPlayer m_PSpawn;
     public GameController m_GController;
@@ -13,7 +14,7 @@ public class Waves : MonoBehaviour
     public float m_SpawnDelay;
     public float m_StartDelay;
     public float m_WaveDelay;
-    
+
     public int m_CurrentWave;
     public int m_EnemyCount;
 
@@ -22,6 +23,7 @@ public class Waves : MonoBehaviour
     public Vector3 m_SpawnArea;
 
     public Text m_Control;
+    #endregion
 
 	// Update is called once per frame
 	public void Awake() 

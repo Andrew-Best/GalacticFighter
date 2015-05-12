@@ -3,13 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class LevelData : MonoBehaviour 
+public class LevelData : MonoBehaviour
 {
+    #region Variables
     public GameData m_GData;
 
     public int m_CurrLevel;
 
     public int m_Tier;
+    #endregion
 
     public void SetLevelData(int level/*, int tier*/)
     {

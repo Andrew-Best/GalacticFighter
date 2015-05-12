@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class BossShip : EnemyShip 
+public class BossShip : EnemyShip
 {
+    #region Variables
     public List<GameObject> m_BossDrops;
 
     private int randDrop_;
+    #endregion
 
     new public void Awake()
     {
