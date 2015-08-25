@@ -31,102 +31,54 @@ public class StarMapUI : MonoBehaviour
 
     public int BuyShieldCost
     {
-        get
-        {
-            return (Constants.BASE_UPGRADE_COST * (m_PData.m_ShipLevel));
-        }
+        get { return (Constants.BASE_UPGRADE_COST * (m_PData.m_ShipLevel)); }
     }
 
     public int ShieldUpgradeCost
     {
-        get
-        {
-            return (Constants.BASE_UPGRADE_COST * (m_PData.m_ShipLevel)) * shieldUpgradeCounter_;
-        }
+        get { return (Constants.BASE_UPGRADE_COST * (m_PData.m_ShipLevel)) * shieldUpgradeCounter_; }
     }
     public int EngineUpgradeCost
     {
-        get
-        {
-            return (Constants.BASE_UPGRADE_COST * (m_PData.m_ShipLevel)) * engineUpgradeCounter_;
-        }
+        get { return (Constants.BASE_UPGRADE_COST * (m_PData.m_ShipLevel)) * engineUpgradeCounter_; }
     }
     public int DamageUpgradeCost
     {
-        get
-        {
-            return (Constants.BASE_UPGRADE_COST * (m_PData.m_ShipLevel)) * damageUpgradeCounter_;
-        }
+        get { return (Constants.BASE_UPGRADE_COST * (m_PData.m_ShipLevel)) * damageUpgradeCounter_; }
     }
     public int HealthUpgradeCost
     {
-        get
-        {
-            return (Constants.BASE_UPGRADE_COST * (m_PData.m_ShipLevel)) * healthUpgradeCounter_;
-        }
+        get { return (Constants.BASE_UPGRADE_COST * (m_PData.m_ShipLevel)) * healthUpgradeCounter_; }
     }
     public int TierUpgradeCost
     {
-        get
-        {
-            return (Constants.BASE_SHIP_COST * (m_PData.m_ShipLevel)) * levelUpgradeCounter_;
-        }
+        get { return (Constants.BASE_SHIP_COST * (m_PData.m_ShipLevel)) * levelUpgradeCounter_; }
     }
 
     public int EngineLevel
     {
-        get
-        {
-            return engineUpgradeCounter_;
-        }
-        set
-        {
-            engineUpgradeCounter_ = value;
-        }
+        get { return engineUpgradeCounter_; }
+        set { engineUpgradeCounter_ = value; }
     }
     public int ShieldLevel
     {
-        get
-        {
-            return shieldUpgradeCounter_;
-        }
-        set
-        {
-            shieldUpgradeCounter_ = value;
-        }
+        get { return shieldUpgradeCounter_; }
+        set { shieldUpgradeCounter_ = value; }
     }
     public int DamageLevel
     {
-        get
-        {
-            return damageUpgradeCounter_;
-        }
-        set
-        {
-            damageUpgradeCounter_ = value;
-        }
+        get { return damageUpgradeCounter_; }
+        set { damageUpgradeCounter_ = value; }
     }
     public int HealthLevel
     {
-        get
-        {
-            return healthUpgradeCounter_;
-        }
-        set
-        {
-            healthUpgradeCounter_ = value;
-        }
+        get { return healthUpgradeCounter_; }
+        set { healthUpgradeCounter_ = value; }
     }
     public int PlayerShipLevel
     {
-        get
-        {
-            return levelUpgradeCounter_;
-        }
-        set
-        {
-            levelUpgradeCounter_ = value;
-        }
+        get { return levelUpgradeCounter_; }
+        set { levelUpgradeCounter_ = value; }
     }
     public void Awake()
     {

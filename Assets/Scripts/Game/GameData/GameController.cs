@@ -147,7 +147,7 @@ public class GameController : MonoBehaviour
         m_Win.enabled = true;
     }
    
-    public void SoftSave(GameObject player)
+    /*public void SoftSave(GameObject player)
     {
         m_TempScore = m_Score;
         m_TempKills = m_Kills;
@@ -167,7 +167,7 @@ public class GameController : MonoBehaviour
             }
         }
         //Debug.Log("Soft Save complete");
-    }
+    }*/
 
     public void ClearSoftSave()
     {

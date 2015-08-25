@@ -72,7 +72,7 @@ public class EnemySpawn : MonoBehaviour
                 DestroyAllEnemies();
                 m_WaveNum++;
                 m_WaveText.text = m_WaveNum.ToString("F0");
-
+                m_GData.Save();
                 /*if(m_WaveNum == 6)
                 {
                     m_GData.Save();
@@ -82,7 +82,7 @@ public class EnemySpawn : MonoBehaviour
                 if (m_WaveNum == 11)
                 {
                     m_GController.m_Play = false;
-                    m_GData.Save();
+                    //m_GData.Save();
                     m_GController.Win();
                 }
                 else
@@ -118,7 +118,7 @@ public class EnemySpawn : MonoBehaviour
 
         if (m_WaveNum == 2)
         {
-            m_GController.SoftSave(m_Player);
+            //m_GController.SoftSave(m_Player);
 
             //clear enemy array
             m_Enemies.Clear();
@@ -133,7 +133,7 @@ public class EnemySpawn : MonoBehaviour
 
         if (m_WaveNum == 3)
         {
-            m_GController.SoftSave(m_Player);
+            //m_GController.SoftSave(m_Player);
 
             //clear enemy array
             m_Enemies.Clear();
@@ -148,7 +148,7 @@ public class EnemySpawn : MonoBehaviour
 
         if (m_WaveNum == 4)
         {
-            m_GController.SoftSave(m_Player);
+            //m_GController.SoftSave(m_Player);
 
             //clear enemy array
             m_Enemies.Clear();
@@ -164,7 +164,7 @@ public class EnemySpawn : MonoBehaviour
 
         if (m_WaveNum == 5)
         {
-            m_GController.SoftSave(m_Player);
+           // m_GController.SoftSave(m_Player);
 
             //Set Boss to Spawn
             BossSetUp(m_MiniBoss, 15);
@@ -173,7 +173,7 @@ public class EnemySpawn : MonoBehaviour
         if (m_WaveNum == 6)
         {
             m_GData.Save();
-            m_GController.SoftSave(m_Player);
+            //m_GController.SoftSave(m_Player);
             m_KillsPanel.alpha = 1;
 
             //clear enemy array
@@ -190,7 +190,7 @@ public class EnemySpawn : MonoBehaviour
 
         if (m_WaveNum == 7)
         {
-            m_GController.SoftSave(m_Player);
+            //m_GController.SoftSave(m_Player);
 
             //clear enemy array
             m_Enemies.Clear();
@@ -206,7 +206,7 @@ public class EnemySpawn : MonoBehaviour
 
         if (m_WaveNum == 8)
         {
-            m_GController.SoftSave(m_Player);
+            //m_GController.SoftSave(m_Player);
 
             //clear enemy array
             m_Enemies.Clear();
@@ -222,7 +222,7 @@ public class EnemySpawn : MonoBehaviour
 
         if (m_WaveNum == 9)
         {
-            m_GController.SoftSave(m_Player);
+            //m_GController.SoftSave(m_Player);
 
             //clear enemy array
             m_Enemies.Clear();
@@ -238,7 +238,7 @@ public class EnemySpawn : MonoBehaviour
 
         if (m_WaveNum == 10)
         {
-            m_GController.SoftSave(m_Player);
+            //m_GController.SoftSave(m_Player);
 
             //Set Boss to Spawn
             BossSetUp(m_Boss, 20);
