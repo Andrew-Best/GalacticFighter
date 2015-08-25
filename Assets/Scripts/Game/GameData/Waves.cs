@@ -93,7 +93,6 @@ public class Waves : MonoBehaviour
                 {
                     m_ESpawn.m_WaveNum++;
                     m_ESpawn.m_WaveText.text = m_ESpawn.m_WaveNum.ToString("F0");
-                    m_GController.SoftSave(m_Player);
                     m_ESpawn.m_BossPanel.alpha = 0;
                     m_ESpawn.m_KillsPanel.alpha = 1;
                 }

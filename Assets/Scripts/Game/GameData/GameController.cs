@@ -86,11 +86,6 @@ public class GameController : MonoBehaviour
             m_GData.Save();
         }
 
-        if(Input.GetKey(KeyCode.C))
-        {
-            SoftSave(m_Player);
-        }
-
         if (!m_Play)
         {
             m_Player.GetComponent<PlayerController>().enabled = false;//disable player
@@ -133,7 +128,6 @@ public class GameController : MonoBehaviour
     {
         m_Play = false;
         m_MainUI.enabled = false;
-        LoadSoftSave(m_Player);
         m_ESpawn.DestroyAllEnemies();
         m_Lose.enabled = true;
     }
@@ -143,62 +137,7 @@ public class GameController : MonoBehaviour
         m_Play = false;
         m_MainUI.enabled = false;
         m_ESpawn.DestroyAllEnemies();
-        LoadSoftSave(m_Player);
         m_Win.enabled = true;
-    }
-   
-    /*public void SoftSave(GameObject player)
-    {
-        m_TempScore = m_Score;
-        m_TempKills = m_Kills;
-        m_TempSalvage = m_Salvage;
-        m_TempWaveNum = m_ESpawn.m_WaveNum;
-
-        m_TempHasShield = player.GetComponent<ShipData>().m_HasShield;
-
-        m_TempHP = player.GetComponent<ShipData>().m_HP;
-        m_TempShield = player.GetComponent<ShipData>().m_CurrShield;
-
-        for (int i = 0; i < player.GetComponent<ShipData>().m_Inventory.Count; ++i)
-        {
-            for (int j = 0; j < m_TempItems.Count; ++j)
-            {
-                player.GetComponent<ShipData>().m_Inventory[i].name = m_TempItems[j];
-            }
-        }
-        //Debug.Log("Soft Save complete");
-    }*/
-
-    public void ClearSoftSave()
-    {
-        m_TempScore = 0;
-        m_TempKills = 0;
-        m_TempSalvage = 0;
-        m_TempWaveNum = 0;
-    }
-
-    public void LoadSoftSave(GameObject player)
-    {
-        m_Score = m_TempScore;
-        m_Kills = m_TempKills;
-        m_Salvage = m_TempSalvage;
-        m_ESpawn.m_WaveNum = m_TempWaveNum;
-
-        player.GetComponent<ShipData>().m_HasShield = m_TempHasShield;
-
-        player.GetComponent<ShipData>().m_HP = m_PData.m_HP;
-        player.GetComponent<ShipData>().m_CurrShield = m_TempShield;
-
-        for (int i = 0; i < m_TempItems.Count; ++i)
-        {
-            for (int j = 0; j < player.GetComponent<ShipData>().m_Inventory.Count; ++j)
-            {
-                player.GetComponent<ShipData>().m_Inventory[j].name = m_TempItems[i];
-            }
-        }
-
-
-        Debug.Log("Soft Save Loaded");
     }
 	
 	public void Respawn()
@@ -228,8 +167,6 @@ public class GameController : MonoBehaviour
 
     public void SetPlayerSave(GameObject player)
     {
-        LoadSoftSave(player);
-
         m_PData.m_EnemiesKilledLifetime += m_Kills;
         m_PData.m_TotalScore += m_Score;
         m_PData.m_Salvage += m_Salvage;

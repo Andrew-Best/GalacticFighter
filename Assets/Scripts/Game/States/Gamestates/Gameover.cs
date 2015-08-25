@@ -21,14 +21,12 @@ public class Gameover : MonoBehaviour
 
     public void Continue()
     {
-        Camera.main.GetComponent<GameController>().LoadSoftSave(Camera.main.GetComponent<GameController>().m_Player);
         m_GData.Save();
         Application.LoadLevel("StarMap");
     }
 
     public void Quit()
     {
-        Camera.main.GetComponent<GameController>().LoadSoftSave(Camera.main.GetComponent<GameController>().m_Player);
         m_GData.Save();
         Application.LoadLevel("Start");
     }

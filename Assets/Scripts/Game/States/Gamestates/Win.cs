@@ -21,7 +21,6 @@ public class Win : MonoBehaviour
 
     public void Continue()
     {
-        Camera.main.GetComponent<GameController>().LoadSoftSave(Camera.main.GetComponent<GameController>().m_Player);
         //save progress and let player continue playing
         m_GData.Save();
         Application.LoadLevel("StarMap");
