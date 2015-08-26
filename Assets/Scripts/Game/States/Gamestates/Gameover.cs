@@ -15,8 +15,8 @@ public class Gameover : MonoBehaviour
 
     public void Awake()
     {
-        m_TotalEnemiesKilled.text = m_PData.m_EnemiesKilledLifetime.ToString();
-        m_SalvageCollected.text = m_PData.m_Salvage.ToString();
+        //m_TotalEnemiesKilled.text = m_PData.m_EnemiesKilledLifetime.ToString();
+        //m_SalvageCollected.text = m_PData.m_Salvage.ToString();
     }
 
     public void Continue()

@@ -27,7 +27,14 @@ public class GameData : MonoBehaviour
     public int m_EnemyDamageLevel;
     public int m_EnemyHealthLevel;
     public int m_EnemyShieldLevel;
+
+    private bool loaded_;
     #endregion
+
+    public bool Loaded
+    {
+       get { return loaded_; }
+    }
     void Awake () 
     {
 	    if(m_GData == null)
@@ -52,7 +59,10 @@ public class GameData : MonoBehaviour
         m_EnemyHealthLevel = 1 * m_EnemyTier;
         m_EnemyShieldLevel = 1 * m_EnemyTier;
 
-        Load();
+        if(m_PData != null)
+        {
+            Load();
+        }
 	}
 
     public void Save()
@@ -111,6 +121,7 @@ public class GameData : MonoBehaviour
     {
         if (File.Exists(Application.persistentDataPath + "/playerData.dat"))
         {
+            loaded_ = false;
             Debug.Log("Loading");
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
@@ -131,6 +142,7 @@ public class GameData : MonoBehaviour
             m_PData.m_Tokens = pData.m_Tokens;
 
             file.Close();
+            loaded_ = true;
         }
         else
         {

@@ -24,7 +24,7 @@ public class LootTable : MonoBehaviour
         {
             //Bomb(Nuke)[9]
 
-            Instantiate(m_ItemList.m_PowerUps[8], spawnPosition, spawnRotation);
+            Instantiate(m_ItemList.m_PowerUps[9], spawnPosition, spawnRotation);
         }
 
         else if(randNum_ > 1 && randNum_ <= 6)
@@ -36,18 +36,18 @@ public class LootTable : MonoBehaviour
         else if (randNum_ > 6 && randNum_ <= 11)
         {
             //MissileBattery[8]
-            Instantiate(m_ItemList.m_PowerUps[11], spawnPosition, spawnRotation);
+            Instantiate(m_ItemList.m_PowerUps[8], spawnPosition, spawnRotation);
         }
 
         else if(randNum_ > 11 && randNum_ <= 16)
         {
             //Free Life[5]
-            Instantiate(m_ItemList.m_PowerUps[13], spawnPosition, spawnRotation);
+            Instantiate(m_ItemList.m_PowerUps[5], spawnPosition, spawnRotation);
         }
 
         else if (randNum_ > 16 && randNum_ <= 31)
         {
-            //Dobuble Health[1]
+            //Dobuble Health[2]
             Instantiate(m_ItemList.m_PowerUps[2], spawnPosition, spawnRotation);
         }
 
@@ -60,13 +60,13 @@ public class LootTable : MonoBehaviour
         else if (randNum_ > 46 && randNum_ <= 61)
         {
             //RapidFire[6]
-            Instantiate(m_ItemList.m_PowerUps[12], spawnPosition, spawnRotation);
+            Instantiate(m_ItemList.m_PowerUps[6], spawnPosition, spawnRotation);
         }
 
         else if (randNum_ > 61 && randNum_ <= 81)
         {
             //Missile[7]
-            Instantiate(m_ItemList.m_PowerUps[10], spawnPosition, spawnRotation);
+            Instantiate(m_ItemList.m_PowerUps[7], spawnPosition, spawnRotation);
         }
 
         else if (randNum_ > 81 && randNum_ <= 106)
@@ -77,7 +77,7 @@ public class LootTable : MonoBehaviour
 
         else
         {
-            //Shield[2]
+            //Shield[1]
             Instantiate(m_ItemList.m_PowerUps[1], spawnPosition, spawnRotation);
         }
 
