@@ -27,11 +27,18 @@ public class PowerUpControls : MonoBehaviour
 
     public void SetPowerUpImages()
     {
-        m_Boost1.GetComponent<Image>().material = m_Player.GetComponent<ShipData>().m_Inventory[0].GetComponent<MeshRenderer>().sharedMaterial;
-
-        m_Boost2.GetComponent<Image>().material = m_Player.GetComponent<ShipData>().m_Inventory[1].GetComponent<MeshRenderer>().sharedMaterial;
- 
-        m_Boost3.GetComponent<Image>().material = m_Player.GetComponent<ShipData>().m_Inventory[2].GetComponent<MeshRenderer>().sharedMaterial;
+        if(m_Boost1 != null)
+        {
+            m_Boost1.GetComponent<Image>().material = m_Player.GetComponent<ShipData>().m_Inventory[0].GetComponent<MeshRenderer>().sharedMaterial;
+        }
+        if(m_Boost2 != null)
+        {
+            m_Boost2.GetComponent<Image>().material = m_Player.GetComponent<ShipData>().m_Inventory[1].GetComponent<MeshRenderer>().sharedMaterial;
+        }
+        if(m_Boost3 != null)
+        {
+            m_Boost3.GetComponent<Image>().material = m_Player.GetComponent<ShipData>().m_Inventory[2].GetComponent<MeshRenderer>().sharedMaterial;
+        }
     }
 
     public void ItemsUse()
