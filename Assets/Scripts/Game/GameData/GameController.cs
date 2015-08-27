@@ -108,6 +108,7 @@ public class GameController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 m_Restart = false;
+                m_GData.Save();
                 Application.LoadLevel("StarMap");
             }
         }
