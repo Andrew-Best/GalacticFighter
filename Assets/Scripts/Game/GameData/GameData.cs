@@ -74,7 +74,7 @@ public class GameData : MonoBehaviour
             FileStream file = File.Create(Application.persistentDataPath + "/playerData.dat");
             PlayerSave pData = new PlayerSave();
 
-            pData.m_EnemiesKilledLifetime = m_PData.m_EnemiesKilledLifetime;
+            pData.m_EnemiesKilledLifetime = pData.m_EnemiesKilledLifetime + m_PData.m_EnemiesKilled;
             pData.m_WavesCompleted = m_PData.m_WavesCompleted;
             pData.m_TotalScore = m_PData.m_TotalScore;
             pData.m_Salvage = m_PData.m_Salvage;
@@ -98,7 +98,7 @@ public class GameData : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
             PlayerSave pData = new PlayerSave();
 
-            pData.m_EnemiesKilledLifetime = m_PData.m_EnemiesKilledLifetime;
+            pData.m_EnemiesKilledLifetime = pData.m_EnemiesKilledLifetime + m_PData.m_EnemiesKilled;
             pData.m_WavesCompleted = m_PData.m_WavesCompleted;
             pData.m_TotalScore = m_PData.m_TotalScore;
             pData.m_Salvage = m_PData.m_Salvage;
@@ -127,7 +127,7 @@ public class GameData : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
             PlayerSave pData = (PlayerSave)bf.Deserialize(file);
 
-            m_PData.m_EnemiesKilledLifetime = pData.m_EnemiesKilledLifetime;
+            m_PData.m_EnemiesKilled = pData.m_EnemiesKilledLifetime;
             m_PData.m_WavesCompleted = pData.m_WavesCompleted;
             m_PData.m_TotalScore = pData.m_TotalScore;
             m_PData.m_Salvage = pData.m_Salvage;
@@ -141,6 +141,7 @@ public class GameData : MonoBehaviour
             m_PData.m_Items = pData.m_Items;
             m_PData.m_Tokens = pData.m_Tokens;
 
+            Debug.Log(m_PData.m_EnemiesKilled);
             file.Close();
             loaded_ = true;
         }

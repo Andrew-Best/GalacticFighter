@@ -167,7 +167,7 @@ public class GameController : MonoBehaviour
 
     public void SetPlayerSave(GameObject player)
     {
-        m_PData.m_EnemiesKilledLifetime += m_Kills;
+        m_PData.m_EnemiesKilled += m_Kills;
         m_PData.m_TotalScore += m_Score;
         m_PData.m_Salvage += m_Salvage;
         for (int i = 0; i < m_PSpawn.m_Player.GetComponent<ShipData>().m_Inventory.Count; ++i)

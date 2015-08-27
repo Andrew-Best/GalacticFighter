@@ -98,7 +98,7 @@ public class StarMapUI : MonoBehaviour
 
         m_Salvage.text = "You have " + m_PData.m_Salvage.ToString() + " Salvage";
 
-        if(m_PData.m_Tokens.Count > 0)
+        if(m_PData.m_Tokens != null && m_PData.m_Tokens.Count > 0)
         {
             for (int i = 0; i < m_PData.m_Tokens.Count; ++i)
             {
@@ -111,7 +111,7 @@ public class StarMapUI : MonoBehaviour
                     m_HealthText.text = "Cost: " + HealthUpgradeCost.ToString() + "\nCurrent Level: " + HealthLevel;
                 }
 
-                if (m_PData.m_Tokens[i] == "SheildToken")
+                if (m_PData.m_Tokens[i] == "ShieldToken")
                 {
                     m_ShieldText.text = "Cost: 1 ShieldToken";
                 }

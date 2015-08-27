@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour
     #region Variables
     public float m_ForwardAccel;
     public int m_Damage = 1;
+
+    public string m_FiredBy;
     #endregion
 
     void FixedUpdate()
@@ -18,6 +20,11 @@ public class Projectile : MonoBehaviour
         ShipController hitShip = collision.gameObject.GetComponentInChildren<ShipController>();
         if (hitShip != null)
         {
+            if(m_FiredBy == "Player")
+            {
+                GameObject.Find("PlayerData").GetComponent<PlayerData>().m_EnemiesKilled++;
+                Debug.Log(GameObject.Find("PlayerData").GetComponent<PlayerData>().m_EnemiesKilled);
+            }
             Destroy(gameObject);
             hitShip.ApplyDamage(hitShip.gameObject, m_Damage);
         }

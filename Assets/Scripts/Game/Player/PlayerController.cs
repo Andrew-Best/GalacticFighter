@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
                 {
                     if (nextShot_ <= 0.0f)
                     {
-                        m_ShipController.FireWeapons("PlayerShot");
+                        m_ShipController.FireWeapons("Player");
 
                         nextShot_ = m_FireRate;
                     }

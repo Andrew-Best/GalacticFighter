@@ -14,7 +14,7 @@ public class PlayerData : MonoBehaviour
     public List<String> m_Items;
     public List<String> m_Tokens;
 
-    public int m_EnemiesKilledLifetime;
+    public int m_EnemiesKilled;
     public int m_TotalScore;
     public int m_WavesCompleted;
     public int m_Salvage;
@@ -45,7 +45,7 @@ public class PlayerData : MonoBehaviour
             Destroy(gameObject);
         }
 
-        m_EnemiesKilledLifetime = 0;
+        m_EnemiesKilled = 0;
         m_TotalScore = 0;
         m_WavesCompleted = 0;
         m_Salvage = 0;

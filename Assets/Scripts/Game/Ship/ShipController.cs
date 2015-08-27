@@ -11,7 +11,7 @@ public class ShipController : MonoBehaviour
 
     private int totalDamage_;
 
-    public void FireWeapons(string collisionLayerName)
+    public void FireWeapons(string firedBy)
     {
         for (int i = 0; i < m_Data.m_WeaponState.Length; ++i)
         {
@@ -19,7 +19,7 @@ public class ShipController : MonoBehaviour
             {
                 if (m_Data.m_WeaponState[i].m_CooldownTimer <= 0.0f)
                 {
-                    m_Data.m_Weapons[i].Fire(m_Data.m_WeaponState[i], gameObject, collisionLayerName);
+                    m_Data.m_Weapons[i].Fire(m_Data.m_WeaponState[i], gameObject, firedBy);
                 }
             }
         }

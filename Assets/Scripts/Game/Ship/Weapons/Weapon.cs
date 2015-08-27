@@ -39,9 +39,10 @@ public class Weapon : MonoBehaviour
         m_Shot = projectile;
     }
 
-    public void Fire(WeaponStateData stateData, GameObject parentShip, string collisionLayerName)
+    public void Fire(WeaponStateData stateData, GameObject parentShip, string firedBy)
     {
-        Instantiate(m_Shot, m_Blaster.position, m_Blaster.rotation);
+        GameObject go = (GameObject)Instantiate(m_Shot, m_Blaster.position, m_Blaster.rotation);
+        go.GetComponent<Projectile>().m_FiredBy = firedBy;
 
         stateData.m_Ammo -= 1;
         stateData.m_CooldownTimer = m_Cooldown;

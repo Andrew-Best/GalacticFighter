@@ -41,7 +41,7 @@ public class UIControl : MonoBehaviour
     {
         m_Player = Camera.main.GetComponent<SpawnPlayer>().m_Player;
 
-        m_EnemiesKilledLifetime = m_PData.m_EnemiesKilledLifetime;
+        m_EnemiesKilledLifetime = m_PData.m_EnemiesKilled;
         m_WavesCompleted = m_PData.m_WavesCompleted;
 
         maxTempShield_ = m_Player.GetComponent<PlayerShip>().m_MaxTempShiledHP;

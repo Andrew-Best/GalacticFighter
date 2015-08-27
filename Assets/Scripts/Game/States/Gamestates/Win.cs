@@ -15,7 +15,7 @@ public class Win : MonoBehaviour
 
     public void Awake()
     {
-        m_CurrentKills.text = m_PData.m_EnemiesKilledLifetime.ToString();
+        m_CurrentKills.text = m_PData.m_EnemiesKilled.ToString();
         m_SalvageCollected.text = m_PData.m_Salvage.ToString();
     }
 
