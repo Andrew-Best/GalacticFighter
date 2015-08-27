@@ -12,6 +12,7 @@ public class PlayerData : MonoBehaviour
     public static PlayerData m_PData;
 
     public List<String> m_Items;
+    public List<String> m_Tokens;
 
     public int m_EnemiesKilledLifetime;
     public int m_TotalScore;
@@ -93,4 +94,5 @@ class PlayerSave
     public int m_Shield;
 
     public List<String> m_Items;
+    public List<String> m_Tokens;
 }

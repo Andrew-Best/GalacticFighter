@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
 
     public void Awake()
     {
+        m_GData.Load();
         m_MasterVolControl.value = m_GData.m_MasterVol;
         m_MusicVolControl.value = m_GData.m_MusicVol;
     }

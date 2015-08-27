@@ -72,11 +72,19 @@ public class EnemySpawn : MonoBehaviour
                 DestroyAllEnemies();
                 m_WaveNum++;
                 m_WaveText.text = m_WaveNum.ToString("F0");
+                //m_Player.GetComponent<PlayerData>().m_Salvage = m_GController.m_Salvage;
                 m_GController.m_PData.m_Salvage = m_GController.m_Salvage;
-
+                m_GData.Save();
+                /*if(m_WaveNum == 6)
+                {
+                    m_GData.Save();
+                    m_Control.text = "Next Wave";
+                    AISpawn();
+                }*/
                 if (m_WaveNum == 11)
                 {
                     m_GController.m_Play = false;
+                    //m_GData.Save();
                     m_GController.Win();
                 }
                 else

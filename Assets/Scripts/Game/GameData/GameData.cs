@@ -86,6 +86,7 @@ public class GameData : MonoBehaviour
             pData.m_HealthLevel = m_PData.m_HealthLevel;
             pData.m_DamageLevel = m_PData.m_DamageLevel;
             pData.m_Items = m_PData.m_Items;
+            pData.m_Tokens = m_PData.m_Tokens;
 
             bf.Serialize(file, pData);
             file.Close();
@@ -109,6 +110,7 @@ public class GameData : MonoBehaviour
             pData.m_HealthLevel = m_PData.m_HealthLevel;
             pData.m_DamageLevel = m_PData.m_DamageLevel;
             pData.m_Items = m_PData.m_Items;
+            pData.m_Tokens = m_PData.m_Tokens;
 
             bf.Serialize(file, pData);
             file.Close();
@@ -137,6 +139,7 @@ public class GameData : MonoBehaviour
             m_PData.m_HealthLevel = pData.m_HealthLevel;
             m_PData.m_DamageLevel = pData.m_DamageLevel;
             m_PData.m_Items = pData.m_Items;
+            m_PData.m_Tokens = pData.m_Tokens;
 
             file.Close();
             loaded_ = true;
