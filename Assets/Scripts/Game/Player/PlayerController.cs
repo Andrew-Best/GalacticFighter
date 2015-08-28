@@ -10,18 +10,26 @@ public class Boundary
 public class PlayerController : MonoBehaviour
 {
     #region Variables
+    /// <summary>Player Data</summary>
     public PlayerData m_PData;
-
+    /// <summary></summary>
     public GameObject m_Enemy;
 
+    /// <summary>Ship controller belonging to the Player's Ship</summary>
     public ShipController m_ShipController;
+    /// <summary>Player's ship</summary>
     public PlayerShip m_PlayerShip;
+    /// <summary>The boundary of the player</summary>
     public Boundary m_PlayerBoundary;
 
+    /// <summary>Maximum velocity</summary>
     public float m_MaxVel;
+    /// <summary>Firing rate</summary>
     public float m_FireRate;
+    /// <summary>Amount of salvage currently owned</summary>
     public int m_Salvage;
 
+    /// <summary>Time until next shot</summary>
     private float nextShot_;
     #endregion
 
@@ -101,6 +109,7 @@ public class PlayerController : MonoBehaviour
         }*/
     }
 
+    /// <summary>Resets the player's ammo to the maximum</summary>
     public void ResetProjectileAmmo()
     {
         for (int i = 0; i < this.GetComponent<ShipData>().m_Weapons.Length; ++i)

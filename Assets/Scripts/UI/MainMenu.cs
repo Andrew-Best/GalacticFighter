@@ -5,12 +5,15 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     #region Variables
+    /// <summary>Game Data</summary>
     public GameData m_GData;
-
+    /// <summary>Start Button</summary>
     public Button m_Start;
+    /// <summary>Quit Button</summary>
     public Button m_Quit;
- 
+    /// <summary>Master Volume Slider</summary>
     public Slider m_MasterVolControl;
+    /// <summary>Music Volume Slider</summary>
     public Slider m_MusicVolControl;
     #endregion
 
@@ -20,6 +23,7 @@ public class MainMenu : MonoBehaviour
         m_MusicVolControl.value = m_GData.m_MusicVol;
     }
 
+    /// <summary>Starts the game - button function</summary>
     public void StartGame()
     {
         m_GData.m_MasterVol = m_MasterVolControl.value;
@@ -33,17 +37,20 @@ public class MainMenu : MonoBehaviour
         SetVolume();
     }
 
+    /// <summary>Changes the volume - slider function</summary>
     public void SetVolume()
     {
         m_GData.m_MasterVol = m_MasterVolControl.value;
         m_GData.m_MusicVol = m_MusicVolControl.value;
     }
 
+    /// <summary>Quits the game - button function</summary>
     public void Quit()
     {
         Application.Quit();
     }
 
+    /// <summary>Opens the options menu - button function</summary>
     public void OptionsMenu()
     {
         m_MasterVolControl.value = m_GData.m_MasterVol;

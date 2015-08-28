@@ -4,13 +4,19 @@ using UnityEngine.UI;
 
 public class ShipController : MonoBehaviour
 {
+    /// <summary>Ship Data that belongs to this controller</summary>
     public ShipData m_Data;
+    /// <summary>Ship that belongs to this controller</summary>
     public Ship m_Ship;
 
+    /// <summary>Explosion when the ship dies</summary>
     public GameObject m_Explosion;
 
+    /// <summary>Damage after the damage modifier is applied</summary>
     private int totalDamage_;
 
+    /// <summary>Fire the weapons of the ship</summary>
+    /// <param name="firedBy">The name of the ship that is firing</param>
     public void FireWeapons(string firedBy)
     {
         for (int i = 0; i < m_Data.m_WeaponState.Length; ++i)
@@ -25,6 +31,9 @@ public class ShipController : MonoBehaviour
         }
     }
 
+    /// <summary>Damage received by the ship</summary>
+    /// <param name="ship">Ship taking the damage</param>
+    /// <param name="damage">Amount of damage being dealt</param>
     public void ApplyDamage(GameObject ship, int damage)
     {
         totalDamage_ = damage * ship.GetComponent<Ship>().m_DamageModifier;
