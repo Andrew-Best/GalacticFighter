@@ -4,30 +4,51 @@ using UnityEngine.UI;
 
 public class StarMapUI : MonoBehaviour
 {
-    public GameObject m_UpgradePanel; //Upgrade panel UI element
-    public Text m_HealthText; //Text UI element for the health cost and upgrade level
-    public Text m_ShieldText; //Text UI element for the shield cost and upgrade level
-    public Text m_DamageText; //Text UI element for the damage cost and upgrade level
-    public Text m_EngineText; //Text UI element for the engine cost and upgrade level
-    public Text m_TierText; //Text UI element for the cost of the next tier Ship
-    public Text m_Control;//Text element to tell player to upgrade for level they r choosing to play
-    public Text m_Salvage;//Amount of Salvage the player has to spend
+    /// <summary>Upgrade panel UI element</summary>
+    public GameObject m_UpgradePanel;
+    /// <summary>Text UI element for the health cost/upgrade level</summary>
+    public Text m_HealthText;
+    /// <summary>Text UI element for the shield cost/upgrade level</summary>
+    public Text m_ShieldText;
+    /// <summary>Text UI element for the damage cost/upgrade level</summary>
+    public Text m_DamageText;
+    /// <summary>Text UI element for the engine cost/upgrade level</summary>
+    public Text m_EngineText;
+    /// <summary>Text UI element for the cost of the next tier ship</summary>
+    public Text m_TierText;
+    /// <summary>Text element to tell player to upgrade for level they are choosing to play</summary>
+    public Text m_Control;
+    /// <summary>Text UI element displaying amount of salvage the player has</summary>
+    public Text m_Salvage;
 
+    /// <summary>Upgrade Health button</summary>
     public Button m_Health;
+    /// <summary>Upgrade Shield button</summary>
     public Button m_Shield;
+    /// <summary>Upgrade Damage button</summary>
     public Button m_Damage;
+    /// <summary>Upgrade Engine button</summary>
     public Button m_Engine;
 
+    /// <summary>Player Data script</summary>
     public PlayerData m_PData;
+    /// <summary>Game Data script</summary>
     public GameData m_GData;
+    /// <summary>Level Data script</summary>
     public LevelData m_LData;
 
+    /// <summary>Cost to upgrade</summary>
     private int upgradeCost_;
-    private int shieldUpgradeCounter_; //Amount of upgrades in the shield by the player
-    private int engineUpgradeCounter_; //Amount of upgrades in the engines by the player
-    private int damageUpgradeCounter_; //Amount of upgrades in the damage by the player
-    private int healthUpgradeCounter_; //Amount of upgrades in the health by the player
-    private int levelUpgradeCounter_; //Level of PlayerShip
+    /// <summary>Amount of upgrades in the shield by the player</summary>
+    private int shieldUpgradeCounter_;
+    /// <summary>Amount of upgrades in the engines by the player</summary>
+    private int engineUpgradeCounter_;
+    /// <summary>Amount of upgrades in damage by the player</summary>
+    private int damageUpgradeCounter_;
+    /// <summary>Amount of upgrades in health by the player</summary>
+    private int healthUpgradeCounter_;
+    /// <summary>Level of the Player Ship</summary>
+    private int levelUpgradeCounter_;
 
     public int BuyShieldCost
     {
@@ -184,20 +205,22 @@ public class StarMapUI : MonoBehaviour
             Application.LoadLevel("Game");
         }
     }
-    //Button function -- If the user presses the spaceship this function will fire
-    //                -- The function opens up the Upgrade menu, where they can then upgrade their ship or upgrade to a higher tier ship entirely
+
+    /// <summary>Button function -- If the user presses the spaceship this function fires. The function opens up the Upgrade Menu.</summary>
     public void UpgradeMenu()
     {
         m_Control.text = "";
         m_UpgradePanel.SetActive(true);
     }
-    //Button function
+
+    /// <summary>Button function -- Closes the upgrade menu</summary>
     public void CloseMenu()
     {
         m_Control.text = "";
         m_UpgradePanel.SetActive(false);
     }
-    //Button function
+
+    /// <summary>Button function -- If the user presses this button they will purchase a damage upgrade so long as they have enough tokens/salvage</summary>
     public void UpgradeDamage()
     {
         if(m_PData.m_Tokens.Count > 0)
@@ -250,7 +273,8 @@ public class StarMapUI : MonoBehaviour
             }
         }
     }
-    //Button function
+
+    /// <summary>Button function -- If the user presses this button they will purchase an engine upgrade so long as they have enough tokens/salvage</summary>
     public void UpgradeEngine()
     {
         if (m_PData.m_Tokens.Count > 0)
@@ -303,7 +327,8 @@ public class StarMapUI : MonoBehaviour
             }
         }
     }
-    //Button function
+
+    /// <summary>Button function -- If the user presses this button they will purchase a health upgrade so long as they have enough tokens/salvage</summary>
     public void UpgradeHealth()
     {
         if (m_PData.m_Tokens.Count > 0)
@@ -358,7 +383,8 @@ public class StarMapUI : MonoBehaviour
             }
         }
     }
-    //Button function
+
+    /// <summary>Button function -- If the user presses this button they will purchase a shield upgrade so long as they have enough tokens/salvage</summary>
     public void UpgradeShield()
     {
         if (m_PData.m_Tokens.Count > 0)
@@ -451,7 +477,8 @@ public class StarMapUI : MonoBehaviour
             }
         }
     }
-    //Button function
+
+    /// <summary>Button function -- If the user presses this button they will purchase a ship upgrade so long as they have enough tokens/salvage</summary>
     public void UpgradeShip()
     {
         m_Control.text = "";

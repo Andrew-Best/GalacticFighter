@@ -4,9 +4,11 @@ using System.Collections;
 public class Projectile : MonoBehaviour
 {
     #region Variables
+    /// <summary>Forward acceleration</summary>
     public float m_ForwardAccel;
+    /// <summary>Damage dealt by projectile</summary>
     public int m_Damage = 1;
-
+    /// <summary>Who fired the projectile</summary>
     public string m_FiredBy;
     #endregion
 

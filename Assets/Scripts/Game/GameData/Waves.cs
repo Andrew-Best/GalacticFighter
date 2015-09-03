@@ -7,21 +7,27 @@ using UnityEngine.UI;
 public class Waves : MonoBehaviour
 {
     #region Variables
+    /// <summary>Enemy spawn script</summary>
     public EnemySpawn m_ESpawn;
+    /// <summary>Player spawn script</summary>
     public SpawnPlayer m_PSpawn;
+    /// <summary>Game Controller script</summary>
     public GameController m_GController;
-
+    /// <summary>Spawn delay</summary>
     public float m_SpawnDelay;
+    /// <summary>Start delay</summary>
     public float m_StartDelay;
+    /// <summary>Wave delay</summary>
     public float m_WaveDelay;
-
+    /// <summary>Current wave</summary>
     public int m_CurrentWave;
+    /// <summary>Enemy count</summary>
     public int m_EnemyCount;
-
+    /// <summary>Player object</summary>
     public GameObject m_Player;
-
+    /// <summary>Spawn area of the enemies</summary>
     public Vector3 m_SpawnArea;
-
+    /// <summary>Controls text</summary>
     public Text m_Control;
     #endregion
 

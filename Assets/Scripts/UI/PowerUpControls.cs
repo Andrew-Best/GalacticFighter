@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class PowerUpControls : MonoBehaviour 
 {
+    /// <summary>Player object</summary>
     public GameObject m_Player;
-
+    /// <summary>Blank Image Material</summary>
     public Material m_BlankImage;
- 
+    /// <summary>Boost 1 Button</summary>
     public Button m_Boost1;
+    /// <summary>Boost 2 Button</summary>
     public Button m_Boost2;
+    /// <summary>Boost 3 Button</summary>
     public Button m_Boost3;
 
     public void Start()
@@ -24,7 +27,7 @@ public class PowerUpControls : MonoBehaviour
         ItemsUse();
     }
 
-
+    /// <summary>Set the image of the power up</summary>
     public void SetPowerUpImages()
     {
         if(m_Boost1 != null)
@@ -41,6 +44,7 @@ public class PowerUpControls : MonoBehaviour
         }
     }
 
+    /// <summary>Check if the item has been used</summary>
     public void ItemsUse()
     {
         if (Input.GetKey(KeyCode.B))

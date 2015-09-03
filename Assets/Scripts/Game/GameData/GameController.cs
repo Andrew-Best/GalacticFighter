@@ -9,59 +9,87 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     #region Variables
-    #endregion
+    /// <summary>Text to display instructions</summary>
     public Text m_ControlText;
-
+    /// <summary>Game Data script</summary>
     public GameData m_GData;
+    /// <summary>Player Data script</summary>
     public PlayerData m_PData;
+    /// <summary>Spawn Player script</summary>
     public SpawnPlayer m_PSpawn;
+    /// <summary>Enemy Spawn script</summary>
     public EnemySpawn m_ESpawn;
+    /// <summary>Waves script</summary>
     public Waves m_Waves;
-
+    /// <summary>Player object</summary>
     public GameObject m_Player;
-
+    /// <summary>Win canvas</summary>
     public Canvas m_Win;
+    /// <summary>Lose canvas</summary>
     public Canvas m_Lose;
+    /// <summary>Boss Health Panel</summary>
     public CanvasGroup m_BossPanel;
+    /// <summary>Primary UI</summary>
     public Canvas m_MainUI;
-
+    /// <summary>UI Controller Script</summary>
     public UIControl m_UIControl;
-
+    /// <summary>Current Level</summary>
     public int m_Level;
-
-    public int m_Lives = 3; //Number of lives the player has
-    public int m_Score = 0; //Player's current score
-    public int m_TotalScore; //For stat pruposes
+    /// <summary>The number of lives the player has</summary>
+    public int m_Lives = 3;
+    /// <summary>Player's current score</summary>
+    public int m_Score = 0;
+    /// <summary>Total score - for stat purposes</summary>
+    public int m_TotalScore;
+    /// <summary>Number of kills so far</summary>
     public int m_Kills;
+    /// <summary>Amount of salvage attained</summary>
     public int m_Salvage;
-
+    /// <summary>A Temporary list of items</summary>
     public List<String> m_TempItems;
 
+    /// <summary>Temporary amount of kills -- Used in the event of restart</summary>
     public int m_TempKills;
+    /// <summary>Temporary score -- Used in the event of restart</summary>
     public int m_TempScore;
+    /// <summary>Temporary amount of salvage -- Used in the event of restart</summary>
     public int m_TempSalvage;
+    /// <summary>Temporary wave number -- Used in the event of restart</summary>
     public int m_TempWaveNum;
+    /// <summary>Temporary amount of kills lifetime -- Used in the event of restart</summary>
     public int m_TempEnemiesKilledLifetime;
+    /// <summary>Temporary total score -- Used in the event of restart</summary>
     public int m_TempTotalScore;
+    /// <summary>Temporary waves completed -- Used in the event of restart</summary>
     public int m_TempWavesCompleted;
+    /// <summary>Temporary ship level -- Used in the event of restart</summary>
     public int m_TempShipLevel;
+    /// <summary>Temporary engine level -- Used in the event of restart</summary>
     public int m_TempEngineLevel;
+    /// <summary>Temporary damage level -- Used in the event of restart</summary>
     public int m_TempDamageLevel;
+    /// <summary>Temporary health level -- Used in the event of restart</summary>
     public int m_TempHealthLevel;
+    /// <summary>Temporary shield level -- Used in the event of restart</summary>
     public int m_TempShieldLevel;
-
+    /// <summary>Temporary flag for whether or not player has shield -- Used in the event of restart</summary>
     public bool m_TempHasShield;
-
+    /// <summary>Temporary current HP -- Used in the event of restart</summary>
     public int m_TempHP;
+    /// <summary>Temporary current shield -- Used in the event of restart</summary>
     public int m_TempShield;
+    /// <summary>Temporary damage modifier -- Used in the event of restart</summary>
     public int m_TempDamageModifer;
+    /// <summary>Temporary engine modifier -- Used in the event of restart</summary>
     public int m_TempEngineModifier;
-
+    /// <summary>Flag for restart UI</summary>
     public bool m_Restart;
+    /// <summary>Flag for Game Over UI</summary>
     public bool m_GameOver;
+    /// <summary>Flag for playing the game</summary>
     public bool m_Play;
+    #endregion
 
-    // Use this for initialization
     void Awake()
     {
         m_BossPanel.alpha = 0;
@@ -113,6 +141,7 @@ public class GameController : MonoBehaviour
         }
      }
 
+    /// <summary>Starts the game</summary>
     public void Play()
     {
         if(m_Play)
@@ -124,6 +153,7 @@ public class GameController : MonoBehaviour
         }
     }
 
+    /// <summary>Sets values required in the player loses the game</summary>
     public void GameOver()
     {
         m_Play = false;
@@ -132,6 +162,7 @@ public class GameController : MonoBehaviour
         m_Lose.enabled = true;
     }
 
+    /// <summary>Sets values required if the player wins the game</summary>
     public void Win()
     {
         m_Play = false;
@@ -139,7 +170,8 @@ public class GameController : MonoBehaviour
         m_ESpawn.DestroyAllEnemies();
         m_Win.enabled = true;
     }
-	
+
+    /// <summary>Respawn's the wave and character</summary>
 	public void Respawn()
     {
         m_ControlText.text = "";
@@ -147,6 +179,7 @@ public class GameController : MonoBehaviour
         m_Waves.RestartCurrentWave();
     }
 
+    /// <summary>Once the game has ended, as long as the player has lives, enable the restart. Otherwise this function calls GameOver</summary>
     public void EnableRestart()
     {
         m_Lives -= 1;
@@ -165,6 +198,7 @@ public class GameController : MonoBehaviour
         }
     }
 
+    /// <summary>Sets player stats in preparation for saving</summary>
     public void SetPlayerSave(GameObject player)
     {
         m_PData.m_EnemiesKilled += m_Kills;

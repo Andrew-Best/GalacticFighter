@@ -65,6 +65,7 @@ public class GameData : MonoBehaviour
         }
 	}
 
+    /// <summary>Saves the Player's data</summary>
     public void Save()
     {
         if (!File.Exists(Application.persistentDataPath + "/playerData.dat"))
@@ -117,6 +118,7 @@ public class GameData : MonoBehaviour
         }
     }
 
+    /// <summary>Loads the Player's data</summary>
     public void Load()
     {
         if (File.Exists(Application.persistentDataPath + "/playerData.dat"))

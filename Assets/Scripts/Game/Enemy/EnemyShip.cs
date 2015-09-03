@@ -4,22 +4,34 @@ using System.Collections.Generic;
 
 public class EnemyShip : Ship
 {
-    #region Variables
+    /// <summary>Tier of the ship</summary>
     public int m_Tier;
+    /// <summary>Amount of salvage this kill is worth</summary>
     public int m_SalvageVal;
+    /// <summary>Amount of score this kill is worth</summary>
     public int m_ScoreVal;
 
+    /// <summary>Game Data script</summary>
     public GameData m_GData;
+    /// <summary>Item to drop on death</summary>
     public LootTable m_ItemToDrop;
-
+    /// <summary>Random number chosen by RNG</summary>
     private int randNum_;
-    #endregion
+
+    public int InventorySize
+    {
+        get
+        {
+            return (Constants.BASE_ENEMY_INVO_SIZE * (m_Level * m_Tier));
+        }
+    }
 
     public void Awake()
     {
         SetStats();
     }
 
+    /// <summary>Set the stats of the enemy ship</summary>
     public void SetStats()
     {
         m_Level = m_GData.m_Level;
@@ -48,14 +60,8 @@ public class EnemyShip : Ship
         }
 
     }
-    public int InventorySize
-    {
-        get
-        {
-            return (Constants.BASE_ENEMY_INVO_SIZE * (m_Level * m_Tier));
-        }
-    }
 
+    /// <summary>Determine what item the enemy should drop</summary>
     public void DropLootEnemy(GameObject ship)
     {
         randNum_ = Random.Range(0, 100);
@@ -70,6 +76,7 @@ public class EnemyShip : Ship
         }
     }
 
+    /// <summary>Determine what item the boss should drop</summary>
     public void DropLootBoss(GameObject ship)
     {
         randNum_ = Random.Range(0, 100);
@@ -86,6 +93,7 @@ public class EnemyShip : Ship
         }
     }
 
+    /// <summary>Determine what item the miniboss should drop</summary>
     public void DropLootMiniBoss(GameObject ship)
     {
         randNum_ = Random.Range(0, 100);

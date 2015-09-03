@@ -9,6 +9,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class PlayerData : MonoBehaviour
 {
+    #region Variables
     /// <summary>Player Data</summary>
     public static PlayerData m_PData;
 
@@ -45,6 +46,7 @@ public class PlayerData : MonoBehaviour
     public int m_Shield;
     public int m_DamageModifer;
     public int m_EngineModifier;
+    #endregion
 
     // Use this for initialization
     void Awake()

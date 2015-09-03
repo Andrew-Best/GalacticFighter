@@ -5,18 +5,23 @@ using System.Collections.Generic;
 public class SpawnPlayer : MonoBehaviour
 {
     #region Variables
+    /// <summary>Game Data script</summary>
     public GameData m_GData;
+    /// <summary>Player Data script</summary>
     public PlayerData m_PData;
+    /// <summary>Game Controller script</summary>
     public GameController m_GController;
-
+    /// <summary>List of Players (for each life)</summary>
     public List<GameObject> m_PlayerPrefab = new List<GameObject>();
+    /// <summary>Object pool for the player?</summary>
     private List<GameObject> playerPool_ = new List<GameObject>();
-
+    /// <summary>Player object</summary>
     public GameObject m_Player;
- 
+    /// <summary>Player object set by the m_PlayerPrefab list</summary>
     private GameObject playerObj_;
     #endregion
 
+    /// <summary>Sets the stats of the player</summary>
     public void SetStats(GameObject player)
     {
         m_Player.GetComponent<PlayerShip>().m_DamageModifier = m_PData.m_DamageModifer;
@@ -33,6 +38,7 @@ public class SpawnPlayer : MonoBehaviour
         }
     }
 
+    /// <summary>Sets the stats of the player based off of the saved values</summary>
     public void SetSavedStats(GameObject player)
     {
         m_Player.GetComponent<PlayerShip>().m_DamageModifier = m_PData.m_DamageModifer;
@@ -50,6 +56,7 @@ public class SpawnPlayer : MonoBehaviour
         }
     }
 
+    /// <summary>Spawn the player</summary>
     public void Spawn()
     {
 
@@ -92,6 +99,7 @@ public class SpawnPlayer : MonoBehaviour
         }
     }
 
+    /// <summary>Respawn the player</summary>
     public void PlayerRespawn()
     {
         m_Player = playerPool_[0];
@@ -120,6 +128,7 @@ public class SpawnPlayer : MonoBehaviour
         SetProjectile();
     }
 
+    /// <summary>Fill the player's weapons with ammo</summary>
     public void SetProjectile()
     {
         for (int i = 0; i < m_Player.GetComponent<ShipData>().m_Weapons.Length; ++i)

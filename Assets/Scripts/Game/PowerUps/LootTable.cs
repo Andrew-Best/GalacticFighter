@@ -4,10 +4,13 @@ using System.Collections.Generic;
 
 public class LootTable : MonoBehaviour 
 {
+    /// <summary>Item script</summary>
     public Items m_ItemList;
-
+    /// <summary>Random number assigned by RNG</summary>
     private int randNum_;
 
+    /// <summary>Function that determines what drops</summary>
+    /// <param name="parentShip">Ship that is dropping the item</param>
     public void LootDrop(GameObject parentShip)
     {
         randNum_ = Random.Range(0, 132);

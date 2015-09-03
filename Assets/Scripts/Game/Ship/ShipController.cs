@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ShipController : MonoBehaviour
 {
+    #region Variables
     /// <summary>Ship Data that belongs to this controller</summary>
     public ShipData m_Data;
     /// <summary>Ship that belongs to this controller</summary>
@@ -14,6 +15,7 @@ public class ShipController : MonoBehaviour
 
     /// <summary>Damage after the damage modifier is applied</summary>
     private int totalDamage_;
+    #endregion
 
     /// <summary>Fire the weapons of the ship</summary>
     /// <param name="firedBy">The name of the ship that is firing</param>
