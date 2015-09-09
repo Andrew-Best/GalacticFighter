@@ -187,7 +187,7 @@ public class StarMapUI : MonoBehaviour
         m_PData.m_ShieldLevel = ShieldLevel;
         m_PData.m_DamageLevel = DamageLevel;
     }
-    public void LoadLevel(int level_)
+    public void LoadLevel(int level)
     {
         m_Control.text = "";
         m_LData.LoadLevelData();
@@ -195,9 +195,9 @@ public class StarMapUI : MonoBehaviour
         m_GData.Save();
 
         //set level requirements
-        if ((m_PData.m_ShipLevel) < level_)
+        if ((m_PData.m_ShipLevel) < level)
         {
-            m_Control.text = "Your Ship needs to be Level " + level_ + " to access this area";
+            m_Control.text = "Your Ship needs to be Level " + level + " to access this area";
        }
         else
         {

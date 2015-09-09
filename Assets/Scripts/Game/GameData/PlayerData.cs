@@ -51,7 +51,7 @@ public class PlayerData : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        if (m_PData == null)
+        /*if (m_PData == null)
         {
             DontDestroyOnLoad(gameObject);
             m_PData = this;
@@ -59,7 +59,7 @@ public class PlayerData : MonoBehaviour
         else if(m_PData != null)
         {
             Destroy(gameObject);
-        }
+        }*/
 
         m_EnemiesKilled = 0;
         m_TotalScore = 0;

@@ -7,6 +7,8 @@ public class LevelData : MonoBehaviour
 {
     #region Variables
     public GameData m_GData;
+    public List<Level> m_Levels = new List<Level>();
+
 
     public int m_CurrLevel;
 

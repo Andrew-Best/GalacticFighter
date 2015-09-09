@@ -126,7 +126,6 @@ public class GameController : MonoBehaviour
             }
         }
 
-
         if (m_Restart)
         {
             if (Input.GetKeyDown(KeyCode.R))
