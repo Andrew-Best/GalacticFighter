@@ -25,7 +25,6 @@ public class Projectile : MonoBehaviour
             if(m_FiredBy == "Player")
             {
                 GameObject.Find("PlayerData").GetComponent<PlayerData>().m_EnemiesKilled++;
-                Debug.Log(GameObject.Find("PlayerData").GetComponent<PlayerData>().m_EnemiesKilled);
             }
             Destroy(gameObject);
             hitShip.ApplyDamage(hitShip.gameObject, m_Damage);

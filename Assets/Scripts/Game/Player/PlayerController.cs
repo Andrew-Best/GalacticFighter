@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 {
     #region Variables
     /// <summary>Player Data</summary>
-    public PlayerData m_PData;
+    //public PlayerData m_PData;
     /// <summary></summary>
     public GameObject m_Enemy;
 
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     public void Update()
     {
-        if(m_Enemy == null)
+        if (m_Enemy == null)
         {
             m_Enemy = GameObject.FindGameObjectWithTag("Enemy");
         }

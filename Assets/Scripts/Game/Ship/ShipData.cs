@@ -80,6 +80,12 @@ public class ShipData : MonoBehaviour
 	//Update is called once per frame
 	void FixedUpdate () 
     {
+        if(m_HP > 100)
+        {
+            Debug.Log(m_HP);
+            Debug.Log("");
+        }
+
         for (int i = 0; i < m_WeaponState.Length; ++i)
         {
             m_WeaponState[i].UpdateWeapon();

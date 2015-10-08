@@ -105,13 +105,14 @@ public class GameController : MonoBehaviour
 
         m_PSpawn.Spawn();
         m_Player = m_PSpawn.m_Player;
+        m_PData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
     }
 
     void Update()
     {
         if(Input.GetKey(KeyCode.Return))
         {
-            m_GData.Save();
+            m_GData.Save(m_PData);
         }
 
         if (!m_Play)

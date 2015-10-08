@@ -59,6 +59,7 @@ public class GameData : MonoBehaviour
         m_EnemyHealthLevel = 1 * m_EnemyTier;
         m_EnemyShieldLevel = 1 * m_EnemyTier;
 
+        m_PData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
         if(m_PData != null)
         {
             Load();
@@ -66,7 +67,7 @@ public class GameData : MonoBehaviour
 	}
 
     /// <summary>Saves the Player's data</summary>
-    public void Save()
+    public void Save(PlayerData data)
     {
         if (!File.Exists(Application.persistentDataPath + "/playerData.dat"))
         {
@@ -75,7 +76,9 @@ public class GameData : MonoBehaviour
             FileStream file = File.Create(Application.persistentDataPath + "/playerData.dat");
             PlayerSave pData = new PlayerSave();
 
-            pData.m_EnemiesKilledLifetime = pData.m_EnemiesKilledLifetime + m_PData.m_EnemiesKilled;
+            Debug.Log("Saving data from " + data.gameObject.name);
+
+            /*pData.m_EnemiesKilledLifetime = pData.m_EnemiesKilledLifetime + m_PData.m_EnemiesKilled;
             pData.m_WavesCompleted = m_PData.m_WavesCompleted;
             pData.m_TotalScore = m_PData.m_TotalScore;
             pData.m_Salvage = m_PData.m_Salvage;
@@ -87,7 +90,22 @@ public class GameData : MonoBehaviour
             pData.m_HealthLevel = m_PData.m_HealthLevel;
             pData.m_DamageLevel = m_PData.m_DamageLevel;
             pData.m_Items = m_PData.m_Items;
-            pData.m_Tokens = m_PData.m_Tokens;
+            pData.m_Tokens = m_PData.m_Tokens;*/
+
+            pData.m_EnemiesKilledLifetime = pData.m_EnemiesKilledLifetime + data.m_EnemiesKilled;
+            pData.m_WavesCompleted = data.m_WavesCompleted;
+            pData.m_TotalScore = data.m_TotalScore;
+            Debug.Log("Saved salvage: " + pData.m_Salvage + "     Current Salvage: " + data.m_Salvage);
+            pData.m_Salvage = data.m_Salvage;
+            pData.m_ShipTier = data.m_ShipLevel;
+            pData.m_Shield = data.m_Shield;
+            pData.m_HP = data.m_HP;
+            pData.m_EngineLevel = data.m_EngineLevel;
+            pData.m_ShieldLevel = data.m_ShieldLevel;
+            pData.m_HealthLevel = data.m_HealthLevel;
+            pData.m_DamageLevel = data.m_DamageLevel;
+            pData.m_Items = data.m_Items;
+            pData.m_Tokens = data.m_Tokens;
 
             bf.Serialize(file, pData);
             file.Close();
@@ -99,19 +117,37 @@ public class GameData : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
             PlayerSave pData = new PlayerSave();
 
-            pData.m_EnemiesKilledLifetime = pData.m_EnemiesKilledLifetime + m_PData.m_EnemiesKilled;
-            pData.m_WavesCompleted = m_PData.m_WavesCompleted;
-            pData.m_TotalScore = m_PData.m_TotalScore;
-            pData.m_Salvage = m_PData.m_Salvage;
-            pData.m_ShipTier = m_PData.m_ShipLevel;
-            pData.m_Shield = m_PData.m_Shield;
-            pData.m_HP = m_PData.m_HP;
-            pData.m_EngineLevel = m_PData.m_EngineLevel;
-            pData.m_ShieldLevel = m_PData.m_ShieldLevel;
-            pData.m_HealthLevel = m_PData.m_HealthLevel;
-            pData.m_DamageLevel = m_PData.m_DamageLevel;
-            pData.m_Items = m_PData.m_Items;
-            pData.m_Tokens = m_PData.m_Tokens;
+            Debug.Log("Saving data from " + data.gameObject.name);
+
+            /*pData.m_EnemiesKilledLifetime = pData.m_EnemiesKilledLifetime + m_PData.m_EnemiesKilled;
+           pData.m_WavesCompleted = m_PData.m_WavesCompleted;
+           pData.m_TotalScore = m_PData.m_TotalScore;
+           pData.m_Salvage = m_PData.m_Salvage;
+           pData.m_ShipTier = m_PData.m_ShipLevel;
+           pData.m_Shield = m_PData.m_Shield;
+           pData.m_HP = m_PData.m_HP;
+           pData.m_EngineLevel = m_PData.m_EngineLevel;
+           pData.m_ShieldLevel = m_PData.m_ShieldLevel;
+           pData.m_HealthLevel = m_PData.m_HealthLevel;
+           pData.m_DamageLevel = m_PData.m_DamageLevel;
+           pData.m_Items = m_PData.m_Items;
+           pData.m_Tokens = m_PData.m_Tokens;*/
+
+            pData.m_EnemiesKilledLifetime = pData.m_EnemiesKilledLifetime + data.m_EnemiesKilled;
+            pData.m_WavesCompleted = data.m_WavesCompleted;
+            pData.m_TotalScore = data.m_TotalScore;
+            Debug.Log("Saved salvage: " + pData.m_Salvage + "     Current Salvage: " + data.m_Salvage);
+            pData.m_Salvage = data.m_Salvage;
+            Debug.Log("After save salvage: " + pData.m_Salvage);
+            pData.m_ShipTier = data.m_ShipLevel;
+            pData.m_Shield = data.m_Shield;
+            pData.m_HP = data.m_HP;
+            pData.m_EngineLevel = data.m_EngineLevel;
+            pData.m_ShieldLevel = data.m_ShieldLevel;
+            pData.m_HealthLevel = data.m_HealthLevel;
+            pData.m_DamageLevel = data.m_DamageLevel;
+            pData.m_Items = data.m_Items;
+            pData.m_Tokens = data.m_Tokens;
 
             bf.Serialize(file, pData);
             file.Close();
@@ -128,6 +164,8 @@ public class GameData : MonoBehaviour
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
             PlayerSave pData = (PlayerSave)bf.Deserialize(file);
+
+            Debug.Log("Loading data to " + m_PData.gameObject.name);
 
             m_PData.m_EnemiesKilled = pData.m_EnemiesKilledLifetime;
             m_PData.m_WavesCompleted = pData.m_WavesCompleted;

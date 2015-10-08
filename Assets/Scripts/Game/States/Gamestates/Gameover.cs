@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class Gameover : MonoBehaviour 
 {
     public GameData m_GData;
-    public PlayerData m_PData;
 
     public Text m_TotalEnemiesKilled;
     public Text m_SalvageCollected;
@@ -21,13 +20,13 @@ public class Gameover : MonoBehaviour
 
     public void Continue()
     {
-        m_GData.Save();
+        m_GData.Save(m_GData.m_PData);
         Application.LoadLevel("StarMap");
     }
 
     public void Quit()
     {
-        m_GData.Save();
+        m_GData.Save(m_GData.m_PData);
         Application.LoadLevel("Start");
     }
 }

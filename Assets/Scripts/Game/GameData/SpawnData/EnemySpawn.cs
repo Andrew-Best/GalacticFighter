@@ -74,7 +74,7 @@ public class EnemySpawn : MonoBehaviour
                 m_WaveText.text = m_WaveNum.ToString("F0");
                 //m_Player.GetComponent<PlayerData>().m_Salvage = m_GController.m_Salvage;
                 m_GController.m_PData.m_Salvage = m_GController.m_Salvage;
-                m_GData.Save();
+                m_GData.Save(m_GController.m_PData);
                 /*if(m_WaveNum == 6)
                 {
                     m_GData.Save();
