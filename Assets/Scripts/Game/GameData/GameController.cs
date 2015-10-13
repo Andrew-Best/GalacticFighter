@@ -105,6 +105,7 @@ public class GameController : MonoBehaviour
 
         m_PSpawn.Spawn();
         m_Player = m_PSpawn.m_Player;
+        m_GData = GameObject.Find("GameData").GetComponent<GameData>();
         m_PData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
     }
 

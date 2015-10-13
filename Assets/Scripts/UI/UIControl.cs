@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class UIControl : MonoBehaviour
 {
-    public GameData m_GData;
-    public PlayerData m_PData;
+    private GameData m_GData;
+    private PlayerData m_PData;
     public PowerUpControls m_PUControls;
 
     public GameObject m_GameControl;
@@ -39,6 +39,17 @@ public class UIControl : MonoBehaviour
 
     void Start()
     {
+        m_GData = GameObject.Find("GameData").GetComponent<GameData>();
+        m_PData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
+        if (m_GData == null)
+        {
+            Debug.LogError("GameData is null in UIControl");
+        }
+        if (m_PData == null)
+        {
+            Debug.LogError("PlayerData is null in UIControl");
+        }
+
         m_Player = Camera.main.GetComponent<SpawnPlayer>().m_Player;
 
         m_EnemiesKilledLifetime = m_PData.m_EnemiesKilled;

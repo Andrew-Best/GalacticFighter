@@ -31,7 +31,7 @@ public class StarMapUI : MonoBehaviour
     public Button m_Engine;
 
     /// <summary>Game Data script</summary>
-    public GameData m_GData;
+    private GameData m_GData;
     /// <summary>Level Data script</summary>
     public LevelData m_LData;
 
@@ -106,6 +106,11 @@ public class StarMapUI : MonoBehaviour
         damageUpgradeCounter_ = 1;
         healthUpgradeCounter_ = 1;
         levelUpgradeCounter_ = 1;
+        m_GData = GameObject.Find("GameData").GetComponent<GameData>();
+        if(m_GData == null)
+        {
+            Debug.LogError("GameData not found or is null");
+        }
    }
     void Update()
     {

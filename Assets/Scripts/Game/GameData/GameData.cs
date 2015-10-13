@@ -96,7 +96,7 @@ public class GameData : MonoBehaviour
             pData.m_WavesCompleted = data.m_WavesCompleted;
             pData.m_TotalScore = data.m_TotalScore;
             Debug.Log("Saved salvage: " + pData.m_Salvage + "     Current Salvage: " + data.m_Salvage);
-            pData.m_Salvage = data.m_Salvage;
+            pData.m_Salvage += data.m_Salvage;
             pData.m_ShipTier = data.m_ShipLevel;
             pData.m_Shield = data.m_Shield;
             pData.m_HP = data.m_HP;
@@ -137,7 +137,7 @@ public class GameData : MonoBehaviour
             pData.m_WavesCompleted = data.m_WavesCompleted;
             pData.m_TotalScore = data.m_TotalScore;
             Debug.Log("Saved salvage: " + pData.m_Salvage + "     Current Salvage: " + data.m_Salvage);
-            pData.m_Salvage = data.m_Salvage;
+            pData.m_Salvage += data.m_Salvage;
             Debug.Log("After save salvage: " + pData.m_Salvage);
             pData.m_ShipTier = data.m_ShipLevel;
             pData.m_Shield = data.m_Shield;
